@@ -942,17 +942,42 @@ a { color: inherit; }
   background: #ffffff; border: 1px solid var(--rule); border-radius: 20px; overflow: hidden;
   display: flex; flex-direction: column;
 }
+.blog-card--click { cursor: pointer; transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
+.blog-card--click:hover {
+  transform: translateY(-4px);
+  border-color: var(--cobalt);
+  box-shadow: 0 22px 44px -24px rgba(15, 23, 42, 0.32);
+}
+.blog-card__time { font-size: 11.5px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 .blog-card__media { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #0d1426; }
 .blog-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .blog-card__media span {
   position: absolute; left: 12px; bottom: 12px; padding: 5px 10px; border-radius: 999px;
   background: rgba(11, 22, 68, 0.82); color: #fff; font-size: 11.5px; font-weight: 700;
 }
-.blog-card__body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.blog-card__body { padding: 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
 .blog-card__body h3 { margin: 0; font-size: 19px; }
 .blog-card__body p { margin: 0; font-size: 14px; color: var(--muted); flex: 1; }
 @media (max-width: 960px) { .blog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 620px) { .blog-grid { grid-template-columns: 1fr; } }
+
+/* On-Site Blog Article Reader Modal */
+.article-modal {
+  position: relative; width: min(780px, 100%); max-height: 92svh; overflow-y: auto;
+  background: #ffffff; color: var(--ink); border-radius: 24px;
+  box-shadow: 0 40px 90px -24px rgba(0, 0, 20, 0.72);
+}
+.article-modal__media { aspect-ratio: 16 / 8; background: #0d1426; overflow: hidden; }
+.article-modal__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.article-modal__body { padding: clamp(24px, 3.5vw, 38px); }
+.article-modal__body h2 { font-size: clamp(26px, 3.2vw, 36px); margin: 0 0 18px; }
+.article-modal__content { display: grid; gap: 16px; }
+.article-modal__sec h3 { font-size: 18px; margin: 0 0 6px; color: var(--cobalt); }
+.article-modal__sec p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.7; }
+.article-modal__foot {
+  margin-top: 26px; padding-top: 20px; border-top: 1px solid var(--rule);
+  display: flex; flex-wrap: wrap; gap: 10px;
+}
 
 /* Career / Current Openings */
 .career { background: var(--bg); }

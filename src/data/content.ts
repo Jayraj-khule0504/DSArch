@@ -408,60 +408,153 @@ export const eventsGallery = [
   { src: '/events/event-16.jpg', title: 'Celebration at MSR Capital Studio' },
 ]
 
-export const blogPosts = [
+export interface BlogSection {
+  heading?: string
+  body: string
+}
+
+export interface BlogPost {
+  id: string
+  title: string
+  category: string
+  readTime: string
+  src: string
+  excerpt: string
+  sections: BlogSection[]
+}
+
+export const blogPosts: BlogPost[] = [
   {
     id: '34',
     title: 'Vernacular Architecture in Modern India',
     category: 'Sustainability',
+    readTime: '4 min read',
     src: '/blog/vernacular-architecture.jpg',
     excerpt:
       'From mud homes in Rajasthan to timber dwellings in Kerala, borrowing passive climate strategies and local materials creates resilient, energy-efficient buildings.',
-    href: 'https://dsarch.in/blog-details/34',
+    sections: [
+      {
+        body: 'Vernacular architecture refers to the traditional, indigenous architecture of a region developed over generations around local climate, terrain and craft. In a country as diverse as India, vernacular design offers a practical blueprint for sustainable modern construction.',
+      },
+      {
+        heading: 'Sustainability & Resource Efficiency',
+        body: 'By utilizing locally sourced materials such as mud, stone, bamboo and timber, vernacular architecture reduces transportation energy and carbon footprint. Homes in Rajasthan use thick mud or stone walls with high thermal capacity to stay cool, while timber-and-clay homes in Kerala maximize natural cross-ventilation.',
+      },
+      {
+        heading: 'Cultural Preservation & Climate Resilience',
+        body: 'Traditional layouts often integrate Vaastu spatial harmony alongside climate resilience — from elevated bamboo homes in Assam’s floodplains to shaded verandas in Maharashtra. Blending these time-tested principles with modern engineering creates spaces that remain comfortable for generations.',
+      },
+    ],
   },
   {
     id: '32',
     title: 'Dreamspace Architects: The Bright Side',
     category: 'Daylighting',
+    readTime: '4 min read',
     src: '/blog/bright-side.jpg',
     excerpt:
       'How architectural skylights and well-oriented openings bring natural warmth indoors, lower daytime lighting loads and transform residential interiors.',
-    href: 'https://dsarch.in/blog-details/32',
+    sections: [
+      {
+        body: 'Skylights are architectural roof openings that bring abundant natural daylight into rooms that would otherwise have limited access to sunlight — transforming enclosed interiors into bright, airy living spaces.',
+      },
+      {
+        heading: 'Why Architects Recommend Skylights',
+        body: 'Beyond visual openness, well-placed skylights reduce daytime reliance on artificial lighting, improve passive indoor ventilation with operable vents, and preserve complete residential privacy while filling smaller rooms with natural warmth.',
+      },
+      {
+        heading: 'Maintenance & Inspection Checklist',
+        body: 'To keep skylights performing across Pune’s monsoons, inspect periodically for flashing or seal leaks, excessive interior condensation, hairline glass cracks, drafts around frames, and exterior noise intrusion.',
+      },
+    ],
   },
   {
     id: '31',
     title: "Maximising Space in Pune's Urban Homes",
     category: 'Space Planning',
+    readTime: '3 min read',
     src: '/blog/urban-homes.jpg',
     excerpt:
       'As Pune grows denser, smart circulation, zero-waste corridors and dual-aspect layouts unlock comfortable, functional living within every square foot.',
-    href: 'https://dsarch.in/blog-details/31',
+    sections: [
+      {
+        body: 'Rapid urban growth across Pune and Pimpri-Chinchwad brings smaller apartment floor plates, evolving multi-generational family needs, and limited private outdoor space — making intelligent space planning essential.',
+      },
+      {
+        heading: 'DSA Space Optimization Strategies',
+        body: 'We pair multifunctional rooms with built-in custom wardrobes, wall-mounted vertical storage, wide balconies that extend living rooms outdoors, and clutter-free minimalist layouts that maximize natural daylight and cross-breeze.',
+      },
+      {
+        heading: 'Built Around Your Daily Routine',
+        body: 'Every plan starts by prioritizing how your family actually lives and works, ensuring adaptability for future needs while keeping carpet efficiency high.',
+      },
+    ],
   },
   {
     id: '33',
     title: 'Designing for a Sustainable Future',
     category: 'Green Design',
+    readTime: '3 min read',
     src: '/blog/sustainable-future.jpg',
     excerpt:
       'Shaping the built environment responsibly through passive solar shading, cross-ventilation and lower-footprint material specification.',
-    href: 'https://dsarch.in/blog-details/33',
+    sections: [
+      {
+        body: 'With construction accounting for a major share of global energy use, architects carry a responsibility to build thoughtfully. At Dream Space Architects, our philosophy focuses on doing more with less unnecessary complexity.',
+      },
+      {
+        heading: 'Adaptive Reuse & Rationalized Design',
+        body: 'Repurposing existing structures conserves embodied energy, while rationalized planning eliminates over-building — focusing on clean spatial proportions, flexible workspaces and essential architectural craft.',
+      },
+      {
+        heading: 'Passive Energy Efficiency First',
+        body: 'Natural cross-ventilation, solar shading fins, daylight orientation and solar power integration drastically reduce lifetime building energy demand before mechanical systems are even switched on.',
+      },
+    ],
   },
   {
     id: '28',
     title: 'Architectural Acoustics',
     category: 'Building Science',
+    readTime: '3 min read',
     src: '/blog/acoustics.jpg',
     excerpt:
       'Why room proportions, surface absorption and sound isolation matter just as much as visual form in offices, auditoriums and urban homes.',
-    href: 'https://dsarch.in/blog-details/28',
+    sections: [
+      {
+        body: 'Pioneered by Harvard professor Wallace Clement Sabine, architectural acoustics bridges art and physics — shaping how sound waves travel, reflect and absorb inside rooms so spaces feel calm and intelligible.',
+      },
+      {
+        heading: 'Spatial Geometry & Sound Distribution',
+        body: 'Room proportions directly govern echo and clarity. Classic rectangular “shoebox” halls distribute balanced warmth, whereas vineyard-style and fan-shaped layouts bring audiences closer to the sound source.',
+      },
+      {
+        heading: 'Quiet Comfort in Dense Cities',
+        body: 'As Pune’s avenues grow busier, acoustic glazing, wall absorption panels and thoughtful room zoning have become indispensable for peaceful homes, focused offices and modern auditoriums.',
+      },
+    ],
   },
   {
     id: '27',
     title: 'Urban Planning In India',
     category: 'Urbanism',
+    readTime: '4 min read',
     src: '/blog/urban-planning.jpg',
     excerpt:
       'Lessons from India’s rapid urbanisation and why disciplined infrastructure, setbacks and mixed-use zoning shape healthier neighbourhoods.',
-    href: 'https://dsarch.in/blog-details/27',
+    sections: [
+      {
+        body: 'India’s rapid urban migration has tested city infrastructure across the country, creating stark contrasts between modern towers and congested streets where planning lagged behind growth.',
+      },
+      {
+        heading: 'Sustainable Urban Architecture',
+        body: 'Through strategic master planning, Dream Space Architects advocates pedestrian-friendly streets, accessible green buffers, mixed-use neighborhoods and renewable-ready buildings that ease urban congestion.',
+      },
+      {
+        heading: 'Designing Inclusive Communities',
+        body: 'Thoughtful architecture goes beyond individual plots — connecting housing, workplaces, open courts and civic transit into resilient, livable neighborhoods.',
+      },
+    ],
   },
 ]
 
