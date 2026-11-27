@@ -153,7 +153,7 @@ a { color: inherit; }
   overflow: hidden;
   background: var(--bg-hero);
   min-height: max(660px, 95svh);
-  padding: clamp(110px, 14vh, 150px) max(4vw, 18px) clamp(64px, 8vh, 96px);
+  padding: 72px max(4vw, 18px) 32px;
   display: grid;
   place-items: center;
   border-bottom: 1px solid #e2e6ef;
@@ -197,6 +197,7 @@ a { color: inherit; }
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: 28px;
 }
 .hero-clean__eyebrow {
   display: inline-block;
