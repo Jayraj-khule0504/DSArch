@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { animate, useInView } from 'framer-motion'
+import { animate, motion, useInView } from 'framer-motion'
 import { about, firm, stats, values } from '../data/content'
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -80,19 +80,54 @@ export default function About() {
         </div>
       </div>
 
-      {/* Our Journey — Proud Story & Milestones (Since 2008) */}
-      <div className="wrap journey">
+      {/* Our Journey — Proud Legacy & Growth Since 2008 */}
+      <div className="wrap journey-stage">
+        <div className="journey-stage__grid-bg" aria-hidden />
+
         <div className="journey__head">
           <div>
-            <span className="eyebrow">— Our Proud Journey · Since 2008</span>
-            <h3>From a 100 sq.ft first desk to a 2,750 sq.ft landmark studio in Pimpri</h3>
+            <span className="eyebrow eyebrow--gold">— Proud Legacy · Working Since 2008</span>
+            <h3>
+              From a <span>100 sq.ft</span> first desk to a <span>2,750 sq.ft</span> landmark
+              studio in Pimpri
+            </h3>
           </div>
-          <p className="journey__intro">{about.journeyIntro}</p>
+          <div className="journey__badge-box">
+            <span className="journey__since">SINCE 2008</span>
+            <p className="journey__intro">{about.journeyIntro}</p>
+          </div>
+        </div>
+
+        {/* Visual Studio Scale Progression Meter */}
+        <div className="journey-meter" aria-label="Studio expansion from 100 sq.ft in 2008 to 2,750 sq.ft today">
+          <div className="journey-meter__labels">
+            <span><strong>2008</strong> · 100 sq.ft Desk</span>
+            <span>200 sq.ft First Studio</span>
+            <span>750 sq.ft · Morwadi</span>
+            <span className="is-peak"><strong>Today</strong> · 2,750 sq.ft · MSR Capital, Pimpri</span>
+          </div>
+          <div className="journey-meter__track">
+            <motion.div
+              className="journey-meter__fill"
+              initial={{ width: '0%' }}
+              whileInView={{ width: '100%' }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            />
+          </div>
         </div>
 
         <ol className="journey__story">
           {about.journey.map((j, idx) => (
-            <li key={j.step} className="journey-card">
+            <motion.li
+              key={j.step}
+              className={`journey-card${idx === about.journey.length - 1 ? ' journey-card--crown' : ''}`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.18 }}
+              transition={{ duration: 0.42, delay: idx * 0.09, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <span className="journey-card__ghost" aria-hidden>0{idx + 1}</span>
               <div className="journey-card__rail">
                 <span className="journey__num">0{idx + 1}</span>
                 <span className="journey-card__era">{j.era}</span>
@@ -102,9 +137,24 @@ export default function About() {
                 <h4>{j.step}</h4>
                 <p>{j.text}</p>
               </div>
-            </li>
+            </motion.li>
           ))}
         </ol>
+
+        <div className="journey-footer">
+          <div>
+            <strong>27.5×</strong>
+            <span>Studio Growth Since 2008</span>
+          </div>
+          <div>
+            <strong>812+</strong>
+            <span>Buildings &amp; Interiors Delivered</span>
+          </div>
+          <div>
+            <strong>8,580+</strong>
+            <span>Families &amp; Clients Served</span>
+          </div>
+        </div>
       </div>
 
       <div className="wrap about__quote-band">
