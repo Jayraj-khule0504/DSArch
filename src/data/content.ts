@@ -64,22 +64,32 @@ export const about = {
     'In the approaching years, we aim to be a leading architectural practice in Pune — elevating clients through balanced design, technical expertise, applied technology and service quality, while training the architects and engineers of tomorrow.',
   mission:
     'To produce beautiful, inspirational architecture that improves people’s lives and the environment — in harmony with history, culture and nature through modern technical advancements.',
+  journeyIntro:
+    'What began with one young architect’s fascination for how buildings shape human lives has grown — brick by brick, drawing by drawing — into one of Pimpri-Chinchwad’s most trusted architectural practices.',
   journey: [
     {
-      step: 'B. Architecture',
-      text: 'Graduated from NTVS College of Architecture and commenced independent architectural practice in Pune.',
+      era: 'Foundation',
+      scale: 'NTVS College of Architecture',
+      step: 'The Dream Begins — B. Architecture',
+      text: 'Driven by a lifelong desire to design meaningful buildings, Ar. Mahendra Thakur completed his B. Architecture from NTVS College of Architecture and stepped into Pune’s architectural landscape as an independent practitioner — determined to pair technical rigour with human-centred design.',
     },
     {
-      step: 'Inception of DSA (2008)',
-      text: 'Established Dream Space Architects with our first interior project, growing from 100 sq.ft to 200 sq.ft.',
+      era: '2008',
+      scale: '100 sq.ft → 200 sq.ft',
+      step: 'Inception of Dream Space Architects',
+      text: 'In 2008, Dream Space Architects was born with a single desk and our very first interior design commission. With every project delivered on time and crafted with care, word spread quickly — doubling our humble studio from 100 sq.ft to 200 sq.ft as new opportunities poured in.',
     },
     {
-      step: 'Growth Through Hard Work',
-      text: 'Earned a strong reputation across PCMC for design & liaisoning, expanding to a 750 sq.ft studio in Morwadi.',
+      era: 'Expansion',
+      scale: '750 sq.ft · Morwadi, PCMC',
+      step: 'Growth Through Relentless Hard Work',
+      text: 'Across Pimpri-Chinchwad, developers and families began turning to DSA not just for striking designs, but for dependable PMC & PCMC liaisoning and hassle-free approvals. Our growing reputation and expanding team carried us into a dedicated 750 sq.ft studio in Morwadi.',
     },
     {
-      step: 'Transform & Success',
-      text: 'Expanded into a 2,750 sq.ft studio at MSR Capital, Pimpri — powered by consistent clientele and a growing team.',
+      era: 'Today',
+      scale: '2,750 sq.ft · MSR Capital, Pimpri',
+      step: 'Transform, Scale & Shared Success',
+      text: 'Today, the DSA family operates from a 2,750 sq.ft landmark studio at MSR Capital Building in Pimpri — powered by 812+ completed buildings, 8,580+ happy customers, and a dedicated multi-disciplinary team of architects, engineers, interior designers and liaisoning specialists.',
     },
   ],
 }

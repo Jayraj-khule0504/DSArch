@@ -80,26 +80,28 @@ export default function About() {
         </div>
       </div>
 
-      {/* Our Journey timeline from dsarch.in/my-aboutus */}
+      {/* Our Journey — Proud Story & Milestones (Since 2008) */}
       <div className="wrap journey">
         <div className="journey__head">
           <div>
-            <span className="eyebrow">— Our Journey (Since 2008)</span>
-            <h3>From a 100 sq.ft desk to a 2,750 sq.ft studio in Pimpri</h3>
+            <span className="eyebrow">— Our Proud Journey · Since 2008</span>
+            <h3>From a 100 sq.ft first desk to a 2,750 sq.ft landmark studio in Pimpri</h3>
           </div>
-          <img
-            src="/about/our-journey.png"
-            alt="Dream Space Architects studio journey illustration"
-            className="journey__img"
-            loading="lazy"
-          />
+          <p className="journey__intro">{about.journeyIntro}</p>
         </div>
-        <ol className="journey__grid">
+
+        <ol className="journey__story">
           {about.journey.map((j, idx) => (
-            <li key={j.step}>
-              <span className="journey__num">0{idx + 1}</span>
-              <strong>{j.step}</strong>
-              <p>{j.text}</p>
+            <li key={j.step} className="journey-card">
+              <div className="journey-card__rail">
+                <span className="journey__num">0{idx + 1}</span>
+                <span className="journey-card__era">{j.era}</span>
+              </div>
+              <div className="journey-card__body">
+                <span className="journey-card__scale">{j.scale}</span>
+                <h4>{j.step}</h4>
+                <p>{j.text}</p>
+              </div>
             </li>
           ))}
         </ol>
