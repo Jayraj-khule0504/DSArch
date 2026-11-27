@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { animate, useInView } from 'framer-motion'
-import { about, clients, process, services, stats } from '../data/content'
+import { about, clients, firm, process, services, stats } from '../data/content'
 import type { PageId } from './Header'
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
@@ -43,8 +43,24 @@ export default function HomeOverview({
 }) {
   return (
     <>
-      {/* 1. Simple About & Numbers */}
-      <section className="band about" aria-label="Studio overview">
+      {/* 1. Founder Quote & Studio Overview right under Front Page */}
+      <section className="band about" aria-label="Founder quote and studio overview">
+        <div className="wrap" style={{ marginBottom: 'clamp(40px, 5vw, 64px)' }}>
+          <figure className="quote quote--split">
+            <div className="quote__body">
+              <blockquote>“{about.quote}”</blockquote>
+              <p>{about.quoteNote}</p>
+              <figcaption>— {firm.founder} · Principal Architect, {firm.name}</figcaption>
+            </div>
+            <img
+              src="/founder-mahendra.jpg"
+              alt={`${firm.founder}, founder of ${firm.name}, drafting architectural plans`}
+              className="quote__photo"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+
         <div className="wrap about__split">
           <div className="about__copy">
             <span className="eyebrow">— Who We Are</span>
