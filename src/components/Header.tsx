@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { firm, nav } from '../data/content'
 
+export type PageId = 'home' | 'about' | 'projects' | 'events' | 'career'
+
 export function BrandLogo({ inverted = false }: { inverted?: boolean }) {
   return (
     <img
@@ -11,7 +13,13 @@ export function BrandLogo({ inverted = false }: { inverted?: boolean }) {
   )
 }
 
-export default function Header() {
+export default function Header({
+  activePage,
+  onNavigate,
+}: {
+  activePage: PageId
+  onNavigate: (target: PageId | 'contact') => void
+}) {
   const [solid, setSolid] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -28,12 +36,25 @@ export default function Header() {
     return () => window.removeEventListener('keydown', onKey)
   }, [])
 
+  const handleNav = (id: string) => {
+    setOpen(false)
+    onNavigate(id as PageId | 'contact')
+  }
+
   return (
     <header className={`hdr${solid ? ' hdr--solid' : ''}${open ? ' hdr--open' : ''}`}>
       <div className="wrap hdr__inner">
-        <a href="#top" className="brand" onClick={() => setOpen(false)}>
+        <a
+          href="#home"
+          className="brand"
+          onClick={(e) => {
+            e.preventDefault()
+            handleNav('home')
+          }}
+        >
           <BrandLogo />
         </a>
+
         <button
           className="menu-btn"
           aria-expanded={open}
@@ -43,17 +64,32 @@ export default function Header() {
           <span className="sr">Menu</span>
           <i /><i />
         </button>
+
         <nav id="site-nav" className="nav">
           <div className="nav__links">
             {nav.map((n) => (
-              <a key={n.id} href={`#${n.id}`} onClick={() => setOpen(false)}>{n.label}</a>
+              <a
+                key={n.id}
+                href={`#${n.id}`}
+                className={activePage === n.id ? 'is-current' : ''}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleNav(n.id)
+                }}
+              >
+                {n.label}
+              </a>
             ))}
           </div>
           <div className="nav__actions">
-            <a href="#projects" className="btn btn--pill-white" onClick={() => setOpen(false)}>
-              Explore projects
-            </a>
-            <a href="#contact" className="btn btn--dark" onClick={() => setOpen(false)}>
+            <a
+              href="#contact"
+              className="btn btn--dark"
+              onClick={(e) => {
+                e.preventDefault()
+                handleNav('contact')
+              }}
+            >
               Book consultation
             </a>
           </div>

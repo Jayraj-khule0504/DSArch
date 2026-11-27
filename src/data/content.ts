@@ -16,12 +16,10 @@ export const firm = {
 export const ENQUIRY_ENDPOINT = ''
 
 export const nav = [
+  { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
-  { id: 'team', label: 'Team' },
-  { id: 'services', label: 'Services' },
   { id: 'projects', label: 'Projects' },
-  { id: 'events', label: 'Events' },
-  { id: 'blog', label: 'Blog' },
+  { id: 'events', label: 'Events & Blog' },
   { id: 'career', label: 'Career' },
   { id: 'contact', label: 'Contact' },
 ]
