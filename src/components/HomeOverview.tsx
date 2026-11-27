@@ -45,11 +45,11 @@ const FEATURED_WORKS = [
     wide: false,
   },
   {
-    title: 'Vishnu Capitals',
+    title: 'Commercial Solanki Heights',
     tag: 'Commercial',
-    location: 'Pune Metropolitan Region',
-    summary: 'Glazed double-level retail & office frontage with bold cantilevered upper corporate volume.',
-    src: '/projects/dsarch-commercial.jpg',
+    location: 'Rahatani, Pune · Commercial Plaza',
+    summary: 'Corner retail & corporate commercial building designed for crisp street presence and clear circulation.',
+    src: '/projects/dsa/solanki-heights.jpg',
     wide: false,
   },
   {

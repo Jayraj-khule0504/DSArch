@@ -202,6 +202,7 @@ export const projectKinds: {
       { title: 'Meridian', location: 'Pimpri-Chinchwad, Pune', scale: 'Residential Tower', src: '/projects/dsa/meridian.jpg', summary: 'Clean modern residential facade with recessed balconies and efficient vertical core.' },
       { title: 'Vrundavan', location: 'Pune · Residential', scale: 'Housing Project', src: '/projects/dsa/vrundavan.jpg', summary: 'Family-centric housing layout optimized for Vastu orientation and natural daylight.' },
       { title: 'Indramegh', location: 'Pune · Residential', scale: 'Apartment Scheme', src: '/projects/dsa/indramegh.jpg', summary: 'Contemporary mid-rise residential architecture with generous balcony shading.' },
+      { title: 'Indratej', location: 'Tathawade, Pune', scale: 'Residential Development', src: '/projects/dsa/indratej.jpg', summary: 'Contemporary residential complex in Tathawade designed for natural cross-ventilation and clean elevation lines.' },
       { title: 'Starwest', location: 'Pune · Residential', scale: 'Residential Towers', src: '/projects/dsa/starwest.jpg', summary: 'Balanced residential elevation with wide balconies and clear ground circulation.' },
       { title: 'Sahyadri Shrubari', location: 'Pune · Residential', scale: 'Housing Complex', src: '/projects/dsa/sahyadri-shrubari.jpg', summary: 'Multi-building residential project designed for ventilation and sunlit courtyards.' },
       { title: 'Twin Tower', location: 'Pimpri-Chinchwad, Pune', scale: 'Twin High-Rise', src: '/projects/dsa/twin-tower.jpg', summary: 'Paired residential towers connected by an elevated amenity and podium deck.' },
@@ -231,12 +232,11 @@ export const projectKinds: {
     label: 'Commercial',
     text: 'Offices, retail plazas, hospitals, hotels and mixed-use buildings designed around crisp street presence, clear circulation and structural flexibility.',
     projects: [
-      { title: 'Vishnu Capitals', location: 'Pune Metropolitan Region', scale: 'Mixed-Use Retail & Offices', src: '/projects/dsarch-commercial.jpg', summary: 'Glazed double-level retail & office frontage with bold cantilevered upper corporate volume.' },
-      { title: 'Commercial Solanki Heights', location: 'Pune · Commercial', scale: 'Retail & Office Building', src: '/projects/dsa/solanki-heights.jpg', summary: 'Corner commercial plaza designed for high street visibility and smooth visitor circulation.' },
-      { title: 'Gandharva Nagari Commercial', location: 'Pune · Mixed-Use', scale: 'Commercial & Civic Hub', src: '/projects/dsa/gandharva-nagari.jpg', summary: 'Integrated commercial frontage serving a large residential township.' },
-      { title: 'Municipal Ward Office', location: 'Pimpri-Chinchwad, Pune', scale: 'Civic Architecture', src: '/projects/dsa/ward-office.jpg', summary: 'Public civic administration building planned for clear visitor access and natural light.' },
-      { title: 'Santosh Karnavat Hospital', location: 'Pune · Healthcare', scale: 'Hospital Architecture', src: '/projects/dsa/karnavat-hospital.jpg', summary: 'Specialized medical facility integrating clinical zoning, fire safety and calm patient spaces.' },
-      { title: 'Hospitality & Hotel Complex', location: 'Pune · Hospitality', scale: 'Commercial Hotel', src: '/projects/dsa/hotel.jpg', summary: 'Contemporary hotel facade with welcoming arrival porte-cochère and guest suites.' },
+      { title: 'Commercial Solanki Heights', location: 'Rahatani, Pune · Commercial', scale: 'Retail & Office Building', src: '/projects/dsa/solanki-heights.jpg', summary: 'Corner commercial plaza designed for high street visibility and smooth visitor circulation.' },
+      { title: 'Gandharva Nagari Commercial', location: 'Moshi, Pune · Mixed-Use', scale: 'Commercial & Civic Hub', src: '/projects/dsa/gandharva-nagari.jpg', summary: 'Integrated commercial frontage serving a large residential township.' },
+      { title: 'Municipal Ward Office', location: 'Chikhali, Pimpri-Chinchwad', scale: 'Civic Architecture', src: '/projects/dsa/ward-office.jpg', summary: 'Public civic administration building planned for clear visitor access and natural light.' },
+      { title: 'Santosh Karnavat Hospital', location: 'Kiwale, Pune · Healthcare', scale: 'Hospital Architecture', src: '/projects/dsa/karnavat-hospital.jpg', summary: 'Specialized medical facility integrating clinical zoning, fire safety and calm patient spaces.' },
+      { title: 'Hospitality & Hotel Complex', location: 'Dudulgaon, Pune · Hospitality', scale: 'Commercial Hotel', src: '/projects/dsa/hotel.jpg', summary: 'Contemporary hotel facade with welcoming arrival porte-cochère and guest suites.' },
     ],
   },
   {
@@ -246,9 +246,10 @@ export const projectKinds: {
     projects: [
       { title: 'Omkar Doke · MSR Capital', location: 'Pimpri · Commercial Interior', scale: 'Executive Office Interior', src: '/projects/dsa/msr-capital-interior.jpg', summary: 'Warm wood-accented corporate office reception, workstations and lighting design.' },
       { title: 'Omkar Doke · Chakan Office', location: 'Chakan, Pune', scale: 'Corporate Workspace', src: '/projects/dsa/chakan-office.jpg', summary: 'Modern industrial-corridor office interior built for collaboration and client meetings.' },
-      { title: 'Giritirth Interior', location: 'Pune · Giritirtha Associates', scale: 'Bespoke Interior Design', src: '/projects/dsa/giritirth-interior.jpg', summary: 'Tailored residential interior combining recessed ceiling coves with rich material finishes.' },
-      { title: 'Ramchandra Mane Residence', location: 'Pune · Home Interior', scale: 'Residential Interior', src: '/projects/dsa/ramchandra-mane.jpg', summary: 'Warm custom joinery, false ceiling lighting and bespoke living room detailing.' },
-      { title: 'Prashant Pansare Residence', location: 'Pune · Home Interior', scale: 'Turnkey Interior', src: '/projects/dsa/prashant-pansare.jpg', summary: 'Contemporary residential interiors tailored around family comfort and storage.' },
+      { title: 'Giritirth Interior', location: 'Ravet, Pune · Giritirtha Associates', scale: 'Bespoke Interior Design', src: '/projects/dsa/giritirth-interior.jpg', summary: 'Tailored residential interior combining recessed ceiling coves with rich material finishes.' },
+      { title: 'Ramchandra Mane Residence', location: 'Bhosari, Pune · Home Interior', scale: 'Residential Interior', src: '/projects/dsa/ramchandra-mane.jpg', summary: 'Warm custom joinery, false ceiling lighting and bespoke living room detailing.' },
+      { title: 'Ramchandra Mane Interior · Living Suite', location: 'Bhosari, Pune · Home Interior', scale: 'Turnkey Interior Design', src: '/projects/dsa/ramchandra-mane-interior-2.jpg', summary: 'Layered architectural panelling, warm cove lighting and cohesive room styling.' },
+      { title: 'Prashant Pansare Residence', location: 'Dudulgaon, Pune · Home Interior', scale: 'Turnkey Interior', src: '/projects/dsa/prashant-pansare.jpg', summary: 'Contemporary residential interiors tailored around family comfort and storage.' },
     ],
   },
   {
@@ -266,9 +267,10 @@ export const projectKinds: {
     label: 'Bungalow',
     text: 'Independent residences sculpted around one family — their plot orientation, privacy, natural light and indoor-outdoor living.',
     projects: [
-      { title: 'Vilas Patil Residence', location: 'Pune · Private Bungalow', scale: 'Independent Villa', src: '/projects/dsa/vilas-patil-bungalow.jpg', summary: 'Cantilevered concrete terraces, warm wooden soffits and private garden frontage.' },
-      { title: 'Satish Gavde Bungalow', location: 'Pune · Private Residence', scale: 'Custom Villa Design', src: '/projects/dsa/satish-gavde-bungalow.jpg', summary: 'Contemporary independent home designed around natural light and family privacy.' },
-      { title: 'Vivek Raut Residence', location: 'Pune · Private Bungalow', scale: 'Custom Residence', src: '/projects/dsa/vivek-raut-bungalow.jpg', summary: 'Bespoke independent home blending terracotta jali screens with shaded terraces.' },
+      { title: 'Vilas Patil Residence', location: 'Ravet, Pune · Private Bungalow', scale: 'Independent Villa', src: '/projects/dsa/vilas-patil-bungalow.jpg', summary: 'Cantilevered concrete terraces, warm wooden soffits and private garden frontage.' },
+      { title: 'Satish Gavde Bungalow', location: 'Bhosari, Pune · Private Residence', scale: 'Custom Villa Design', src: '/projects/dsa/satish-gavde-bungalow.jpg', summary: 'Contemporary independent home designed around natural light and family privacy.' },
+      { title: 'Ramchandra Mane Bungalow', location: 'Bhosari, Pune · Private Residence', scale: 'Independent Villa', src: '/projects/dsa/ramchandra-mane-bungalow.jpg', summary: 'Independent family bungalow with crisp vertical framing, balcony terraces and shaded arrival court.' },
+      { title: 'Vivek Raut Residence', location: 'Nigdi, Pune · Private Bungalow', scale: 'Custom Residence', src: '/projects/dsa/vivek-raut-bungalow.jpg', summary: 'Bespoke independent home blending terracotta jali screens with shaded terraces.' },
     ],
   },
 ]
