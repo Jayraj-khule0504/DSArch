@@ -78,10 +78,18 @@ export default function About() {
       </div>
 
       <div className="wrap about__quote-band">
-        <figure className="quote">
-          <blockquote>“{about.quote}”</blockquote>
-          <p>{about.quoteNote}</p>
-          <figcaption>{firm.founder} · Founder, {firm.name}</figcaption>
+        <figure className="quote quote--split">
+          <div className="quote__body">
+            <blockquote>“{about.quote}”</blockquote>
+            <p>{about.quoteNote}</p>
+            <figcaption>— {firm.founder} · Founder, {firm.name}</figcaption>
+          </div>
+          <img
+            src="/founder-mahendra.jpg"
+            alt={`${firm.founder}, founder of ${firm.name}, drafting architectural plans`}
+            className="quote__photo"
+            loading="lazy"
+          />
         </figure>
       </div>
 

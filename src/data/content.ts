@@ -60,8 +60,9 @@ export const about = {
     'Dream Space Architects is a Pune architectural and interior design practice working across residential towers, commercial hubs, bespoke bungalows and statutory approvals. Alongside design and site supervision, we coordinate environmental, MEP, fire NOC, RCC and municipal sanctioning under one roof.',
     'Every building we deliver begins as an interactive 3D spatial model — letting developers, homeowners and approval authorities inspect structure, daylight and floor plans before a single brick is laid.',
   ],
-  quote: 'The foundation of all things is architecture.',
-  quoteNote: 'We put creative clarity, structural precision and the people who live in our buildings first.',
+  quote:
+    'The foundation of all things is architecture, and this center has enabled us to engage in a diverse range of design projects and problem-solving activities across Pune, India. We prioritize excellent creative output, sustainability, and people. Our project results reflect the strong working relationships we cultivate with clients, consultants, contractors, and local authorities.',
+  quoteNote: 'Designing across residential, commercial, interiors, landscape and statutory approvals.',
   mission:
     'Beautiful, enduring architecture that elevates everyday life and respects Pune’s climate — uniting 3D digital precision with practical execution.',
 }
@@ -129,6 +130,13 @@ export const projectKinds: {
     text: 'High-rise apartment buildings and urban housing planned for natural cross-ventilation, solar shading and optimal carpet efficiency.',
     projects: [
       {
+        title: 'DSA Residential Landmark',
+        location: 'Pimpri-Chinchwad, Pune',
+        scale: 'Multi-Wing Housing · PCMC',
+        src: '/projects/dsarch-residential.jpg',
+        summary: 'Landscaped podium housing planned for light, cross-ventilation and efficient carpet area.',
+      },
+      {
         title: 'DSA Signature Tower',
         location: 'Pimpri-Chinchwad, Pune',
         scale: '22 Floors · 4 BHK Sky Suites',
@@ -149,6 +157,13 @@ export const projectKinds: {
     label: 'Commercial',
     text: 'Offices, retail plazas and mixed-use buildings designed around crisp street presence, clear circulation and structural flexibility.',
     projects: [
+      {
+        title: 'Vishnu Capitals',
+        location: 'Pune Metropolitan Region',
+        scale: 'Mixed-Use Retail & Offices',
+        src: '/projects/dsarch-commercial.jpg',
+        summary: 'Glazed double-level retail & office frontage with bold cantilevered upper corporate volume.',
+      },
       {
         title: 'Grand Arrival & Lounge Podium',
         location: 'Chinchwad, Pune',
@@ -225,13 +240,14 @@ export const values = [
 ]
 
 export const clients = [
-  'Shevi Group',
-  'M/S. Swastik Builders',
-  'Pratham Yash Builders',
-  'Balaji Developers',
-  'Vision Creative Group',
-  'Giritirtha Associates',
-  'Mr. Vasant Kate',
+  { name: 'Tanish', logo: '/clients/tanish.jpg' },
+  { name: 'Balaji Developers', logo: '/clients/balaji.jpg' },
+  { name: 'Vision Creative Group', logo: '/clients/vision.jpg' },
+  { name: 'Shevi Group', logo: '/clients/shevi.jpg' },
+  { name: 'Swastik Builders & Developers', logo: '/clients/swastik.jpg' },
+  { name: 'Guddwill Spaces', logo: '/clients/guddwill.jpg' },
+  { name: 'Giritirtha Associates', logo: '/clients/giritirtha.jpg' },
+  { name: 'PrathamYash', logo: '/clients/prathamyash.jpg' },
 ]
 
 export const testimonials = [

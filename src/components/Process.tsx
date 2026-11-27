@@ -69,10 +69,13 @@ export default function Process() {
           </div>
 
           <div className="clients">
-            <h3>Trusted by Pune developers &amp; families</h3>
-            <ul>
+            <span className="eyebrow">— Clientele</span>
+            <h3>Trusted by Pune developers &amp; builders</h3>
+            <ul className="client-logos">
               {clients.map((c) => (
-                <li key={c}>{c}</li>
+                <li key={c.name} className="client-logo">
+                  <img src={c.logo} alt={c.name} loading="lazy" />
+                </li>
               ))}
             </ul>
           </div>
