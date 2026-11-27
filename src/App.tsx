@@ -1,4 +1,4 @@
-import Header, { Mark } from './components/Header'
+import Header, { BrandLogo } from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
@@ -24,7 +24,7 @@ export default function App() {
       </main>
       <footer className="ftr">
         <div className="wrap ftr__row">
-          <a href="#top" className="brand"><Mark size={26} /><span>{firm.name}</span></a>
+          <a href="#top" className="brand"><BrandLogo inverted /></a>
           <nav aria-label="Footer">{nav.map((n) => <a key={n.id} href={`#${n.id}`}>{n.label}</a>)}</nav>
         </div>
         <p className="wrap ftr__small">© {new Date().getFullYear()} {firm.name}, {firm.city}. {firm.tagline.join('. ')}.</p>

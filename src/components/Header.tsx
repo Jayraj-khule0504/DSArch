@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import { firm, nav } from '../data/content'
 
-export function Mark({ size = 26 }: { size?: number }) {
+export function BrandLogo({ inverted = false }: { inverted?: boolean }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden>
-      <rect x="2" y="2" width="28" height="28" rx="4" fill="none" stroke="currentColor" strokeWidth="2.4" />
-      <path d="M8 24 V14 L16 8 L24 14 V24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round" />
-      <path d="M13 24 V18 H19 V24" fill="none" stroke="currentColor" strokeWidth="2.4" />
-    </svg>
+    <img
+      src="/dsa-logo.png"
+      alt={firm.name}
+      className={`brand__logo${inverted ? ' brand__logo--badge' : ''}`}
+    />
   )
 }
 
@@ -32,11 +32,7 @@ export default function Header() {
     <header className={`hdr${solid ? ' hdr--solid' : ''}${open ? ' hdr--open' : ''}`}>
       <div className="wrap hdr__inner">
         <a href="#top" className="brand" onClick={() => setOpen(false)}>
-          <Mark />
-          <span className="brand__text">
-            <strong>{firm.short}</strong>
-            <small>{firm.name.replace('DSA', '').trim()}</small>
-          </span>
+          <BrandLogo />
         </a>
         <button
           className="menu-btn"
