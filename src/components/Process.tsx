@@ -6,8 +6,8 @@ export default function Process() {
       {/* Dramatic Full-Width CTA Banner matching the uploaded image */}
       <section className="cta-banner" aria-label="Start your architectural project">
         <img
-          src="/projects/residential-tower.jpg"
-          alt="Illuminated modern residential architecture at dusk"
+          src="/projects/dsa/vision-aristo.jpg"
+          alt="Vision Aristo residential towers designed by Dream Space Architects"
           className="cta-banner__bg"
           loading="lazy"
         />

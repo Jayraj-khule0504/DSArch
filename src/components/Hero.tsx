@@ -4,51 +4,51 @@ import { firm } from '../data/content'
 
 const SHOWCASE_VIEWS = [
   {
-    id: 'tower',
-    label: 'Tower Elevation',
-    title: 'DSA Signature Tower · 22 Floors',
-    meta: 'Symmetrical dual-wing residential tower with sky-bridge atrium & arrival gatehouse',
-    src: '/client-project/tower-exterior.jpg',
+    id: 'residential',
+    label: 'Vision Aristo',
+    title: 'Vision Aristo · Residential Towers',
+    meta: 'Vision Creative Group · Multi-wing residential complex with landscaped podium in Pune',
+    src: '/projects/dsa/vision-aristo.jpg',
   },
   {
-    id: 'floor3d',
-    label: '3D Floor Plan',
-    title: '4 BHK Isometric Cutaway · 3,930 sq.ft SBU',
-    meta: '2,078 sq.ft Carpet · 360 sq.ft Balcony · 4 Corner Bedrooms & Main Sky Deck',
-    src: '/client-project/floorplan-3d.jpg',
+    id: 'twin',
+    label: 'Swastik Twin Tower',
+    title: 'Swastik Twin Tower · Pimpri-Chinchwad',
+    meta: 'Swastik Builders & Developers · Twin residential high-rises with retail frontage',
+    src: '/projects/dsa/swastik-twin-tower.jpg',
   },
   {
-    id: 'floor2d',
-    label: '2D Blueprint',
-    title: 'Dimensioned Architectural Plan',
-    meta: "Living & Dining 26'-1\" × 25'-4\" · Main Deck 26'-11\" × 7'-6\" · 4'-10\" Wide Passage",
-    src: '/client-project/floorplan-2d.jpg',
+    id: 'commercial',
+    label: 'Vishnu Capitals',
+    title: 'Vishnu Capitals · Commercial Hub',
+    meta: 'Mixed-use retail & corporate office elevation designed by Dream Space Architects',
+    src: '/projects/dsarch-commercial.jpg',
   },
   {
-    id: 'lounge',
-    label: 'Ground Lounge',
-    title: 'Lounge | Ground Floor Arrival',
-    meta: 'Double-height sculpted ceiling cove lobby overlooking landscaped drop-off court',
-    src: '/client-project/ground-lounge.jpg',
+    id: 'interior',
+    label: 'MSR Capital Interior',
+    title: 'Omkar Doke · MSR Capital Interior',
+    meta: 'Executive corporate workspace interior with warm wood detailing and ambient lighting',
+    src: '/projects/dsa/msr-capital-interior.jpg',
   },
   {
-    id: 'living',
-    label: 'Living & Dining',
-    title: 'Panoramic Living & Dining Hall',
-    meta: '585 sq.ft open living-dining flowing onto sunset terrace sliders',
-    src: '/client-project/living-dining.jpg',
+    id: 'landscape',
+    label: 'Landscape Design',
+    title: 'DSA Skylife · Courtyard & Pool',
+    meta: 'Podium recreational deck, landscaped lawn and water feature designed for community living',
+    src: '/projects/dsa/landscape-1.jpg',
   },
   {
-    id: 'deck',
-    label: 'Sky Deck',
-    title: 'Private Cantilevered Sky Deck',
-    meta: '26′-11″ × 7′-6″ timber-decked balcony overlooking the city skyline',
-    src: '/client-project/sky-deck.jpg',
+    id: 'bungalow',
+    label: 'Vilas Patil Bungalow',
+    title: 'Vilas Patil Residence · Private Villa',
+    meta: 'Cantilevered contemporary bungalow elevation with warm soffits and garden court',
+    src: '/projects/dsa/vilas-patil-bungalow.jpg',
   },
 ] as const
 
 export default function Hero() {
-  const [activeId, setActiveId] = useState<(typeof SHOWCASE_VIEWS)[number]['id']>('tower')
+  const [activeId, setActiveId] = useState<(typeof SHOWCASE_VIEWS)[number]['id']>('residential')
   const current = SHOWCASE_VIEWS.find((v) => v.id === activeId)!
 
   return (
@@ -107,7 +107,7 @@ export default function Hero() {
           <a href="#contact" className="btn btn--pill-white">Book consultation</a>
         </motion.div>
 
-        {/* Clean Architectural Building & Floor Plan Structure Showcase */}
+        {/* Official DSA Portfolio Highlights Showcase Card */}
         <motion.div
           className="hero-showcase"
           initial={{ opacity: 0, y: 22 }}
@@ -115,7 +115,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="hero-showcase__bar">
-            <div className="hero-showcase__tabs" role="tablist" aria-label="Building views">
+            <div className="hero-showcase__tabs" role="tablist" aria-label="DSA featured projects">
               {SHOWCASE_VIEWS.map((v) => (
                 <button
                   key={v.id}
@@ -137,11 +137,6 @@ export default function Hero() {
                 key={current.id}
                 src={current.src}
                 alt={current.title}
-                className={
-                  current.id === 'floor3d' || current.id === 'floor2d'
-                    ? 'is-plan'
-                    : ''
-                }
                 initial={{ opacity: 0.25 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0.25 }}
