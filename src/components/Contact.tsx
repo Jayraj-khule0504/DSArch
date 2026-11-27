@@ -73,7 +73,20 @@ export default function Contact() {
           <h2>Tell us about your plot</h2>
           <p>Get a free first consultation. Share a few details and the team will get back to you to set up a meeting or a site visit.</p>
           <dl>
-            {firm.phone && (<><dt>Phone</dt><dd><a href={`tel:${firm.phone}`}>{firm.phone}</a></dd></>)}
+            {firm.phone && (
+              <>
+                <dt>Phone</dt>
+                <dd>
+                  <a href={`tel:${firm.phone.replace(/\s+/g, '')}`}>{firm.phone}</a>
+                  {firm.landline && (
+                    <>
+                      <br />
+                      <span>{firm.landline}</span>
+                    </>
+                  )}
+                </dd>
+              </>
+            )}
             {firm.email && (<><dt>Email</dt><dd><a href={`mailto:${firm.email}`}>{firm.email}</a></dd></>)}
             <dt>Studio</dt>
             <dd>{firm.address}<br /><a href={mapUrl} target="_blank" rel="noreferrer" className="link">Open in Google Maps</a></dd>

@@ -1,5 +1,4 @@
-// All site copy lives here so it can be edited without touching components.
-// Source: the client's current site, dsarch.in (Nov 2026).
+// All site copy & assets grounded in Dream Space Architects (dsarch.in).
 
 export const firm = {
   name: 'Dream Space Architects',
@@ -7,105 +6,147 @@ export const firm = {
   tagline: ['Dream', 'Speed', 'Build'] as const,
   city: 'Pune',
   founder: 'Ar. Mahendra Thakur',
-  // Add these when the client supplies them; the UI hides empty values.
-  phone: '',
-  email: '',
-  address: 'Pimpri Chinchwad, Pune, Maharashtra',
+  phone: '+91 98235 55761',
+  landline: '020-27400590 / 27400591',
+  email: 'info@dsarch.in',
+  address: 'Office 3 & 4, Ground Floor, MSR Capital Building, Samrat Chowk, Pimpri Court Road, Morwadi, PCMC - 411018',
   map: { lat: 18.634285682481437, lng: 73.800847075016 },
 }
 
-// Paste a Formspree / Getform / your own API URL here to make the enquiry form send.
-// While empty, the form shows the visitor a copyable summary instead.
 export const ENQUIRY_ENDPOINT = ''
 
 export const nav = [
   { id: 'about', label: 'About' },
+  { id: 'team', label: 'Team' },
   { id: 'services', label: 'Services' },
   { id: 'projects', label: 'Projects' },
-  { id: 'process', label: 'Process' },
+  { id: 'events', label: 'Events' },
+  { id: 'blog', label: 'Blog' },
   { id: 'career', label: 'Career' },
   { id: 'contact', label: 'Contact' },
 ]
 
 export const stats = [
-  { value: 15, suffix: '+', label: 'Years in architectural practice' },
+  { value: 15, suffix: '+', label: 'Years in architectural practice (Since 2008)' },
   { value: 812, suffix: '+', label: 'Successfully completed projects' },
-  { value: 8580, suffix: '+', label: 'Happy families & clients' },
-  { value: 72, suffix: '+', label: 'Active projects on site' },
+  { value: 8580, suffix: '+', label: 'Happy customers & families' },
+  { value: 72, suffix: '+', label: 'Active running projects' },
 ]
 
 export const phases = [
   {
     key: 'dream',
     label: 'Dream',
-    line: 'Every project starts as a plot and an idea. We listen first, then shape the 3D massing.',
+    line: 'Every project starts as a plot and an idea. We listen first, then shape the architectural vision.',
   },
   {
     key: 'speed',
     label: 'Speed',
-    line: 'Plans, 3D floor-plan cutaways and PCMC/PMC approval drawings move together.',
+    line: 'Plans, 3D models and PMC/PCMC approval drawings move together, so nothing waits on paperwork.',
   },
   {
     key: 'build',
     label: 'Build',
-    line: 'We stay on site through construction until the finished building matches the model.',
+    line: 'We stay on site through construction until the finished building matches the drawing.',
   },
 ] as const
 
 export type PhaseKey = (typeof phases)[number]['key']
 
 export const about = {
-  title: 'We create spaces that matter',
+  title: 'About Dream Space Architects',
   body: [
-    'Dream Space Architects is a Pune architectural and interior design practice working across residential towers, commercial hubs, bespoke bungalows and statutory approvals. Alongside design and site supervision, we coordinate environmental, MEP, fire NOC, RCC and municipal sanctioning under one roof.',
-    'Every building we deliver begins as an interactive 3D spatial model — letting developers, homeowners and approval authorities inspect structure, daylight and floor plans before a single brick is laid.',
+    'Dream Space Architects is a Pune architectural and interior design practice founded by Ar. Mahendra Thakur (Since 2008). Our expertise lies in bringing together talented architects, engineers, interior designers and passionate partners who make sure every design is functional, safe, economical and innovative.',
+    'Alongside design and site supervision, we connect clients with the right specialist consultants — environmental consulting, corporation sanctioning, MEP, fire NOC and RCC — so projects move faster and hassle-free.',
   ],
   quote:
     'The foundation of all things is architecture, and this center has enabled us to engage in a diverse range of design projects and problem-solving activities across Pune, India. We prioritize excellent creative output, sustainability, and people. Our project results reflect the strong working relationships we cultivate with clients, consultants, contractors, and local authorities.',
   quoteNote: 'Designing across residential, commercial, interiors, landscape and statutory approvals.',
+  vision:
+    'In the approaching years, we aim to be a leading architectural practice in Pune — elevating clients through balanced design, technical expertise, applied technology and service quality, while training the architects and engineers of tomorrow.',
   mission:
-    'Beautiful, enduring architecture that elevates everyday life and respects Pune’s climate — uniting 3D digital precision with practical execution.',
+    'To produce beautiful, inspirational architecture that improves people’s lives and the environment — in harmony with history, culture and nature through modern technical advancements.',
+  journey: [
+    {
+      step: 'B. Architecture',
+      text: 'Graduated from NTVS College of Architecture and commenced independent architectural practice in Pune.',
+    },
+    {
+      step: 'Inception of DSA (2008)',
+      text: 'Established Dream Space Architects with our first interior project, growing from 100 sq.ft to 200 sq.ft.',
+    },
+    {
+      step: 'Growth Through Hard Work',
+      text: 'Earned a strong reputation across PCMC for design & liaisoning, expanding to a 750 sq.ft studio in Morwadi.',
+    },
+    {
+      step: 'Transform & Success',
+      text: 'Expanded into a 2,750 sq.ft studio at MSR Capital, Pimpri — powered by consistent clientele and a growing team.',
+    },
+  ],
 }
+
+export const principalArchitect = {
+  name: 'Ar. Mahendra Thakur',
+  role: 'Principal Architect · 15+ Years Experience',
+  photo: '/about/owner-pic.png',
+  bio: 'A creative and innovative architect with 15+ years of experience, committed to building a better future through collaborative leadership, strong communication, and designs that balance function, safety, economy, and architectural clarity.',
+}
+
+export const teamMembers = [
+  { name: 'Anant Jadhav', role: 'Sr. Architect', photo: '/team/anant-jadhav.jpg' },
+  { name: 'Dhiraj Mote', role: 'Sr. Assistant Architect', photo: '/team/dhiraj-mote.jpg' },
+  { name: 'Sandeep Date', role: 'Sr. Assistant Architect', photo: '/team/sandeep-date.jpg' },
+  { name: 'Akanksha Shinde', role: 'Architect', photo: '/team/akanksha-shinde.png' },
+  { name: 'Rutuja Pawar', role: 'Architect', photo: '/team/rutuja-pawar.png' },
+  { name: 'Rutuja Patil', role: 'Architect', photo: '/team/rutuja-patil.png' },
+  { name: 'Ganesh Mali', role: 'Architect', photo: '/team/ganesh-mali.png' },
+  { name: 'Aishwarya Bhosale', role: 'Interior Designer', photo: '/team/aishwarya-bhosale.png' },
+  { name: 'Amol Bhopale', role: 'Engineer', photo: '/team/amol-bhopale.png' },
+  { name: 'Rushikesh Khambe', role: 'Liaisoning Officer', photo: '/team/rushikesh-khambe.png' },
+  { name: 'Kiran Shinde', role: 'Liaisoning Officer', photo: '/team/kiran-shinde.png' },
+  { name: 'Sayali Janjirkar', role: 'Draftsman', photo: '/team/sayali-janjirkar.jpg' },
+]
 
 export const services = [
   {
-    title: 'Architecture & 3D BIM',
-    summary: 'New buildings, from interactive 3D massing to site supervision.',
+    title: 'Architecture & 3D Consulting',
+    summary: 'Designing, working drawings, 3D visualisation and site supervision.',
     points: [
-      'Concept design, 3D architectural models & elevation studies',
-      'Full working drawings and structural coordination',
-      'Regular site supervision through RCC and finishing',
-      'Restoration, adaptive reuse and facade remodelling',
+      'Concept design, working drawings and 3D consulting',
+      'Supervision of construction on site',
+      'Examination, restoration and remodelling of existing buildings',
+      'Selection of finishes, furnishings and exterior elevations',
     ],
   },
   {
     title: 'Interior design',
-    summary: 'Warm, sculptural interiors tailored to how you live and work.',
+    summary: 'Functional, sculptural spaces tailored to your style and budget.',
     points: [
-      'Luxury residences, penthouses and commercial offices',
-      'Ceiling cove lighting, space planning and material palettes',
-      'Custom joinery, furniture detailing and fixture specs',
-      'Turnkey execution support with vetted contractors',
+      'Homes, offices and commercial interiors of any size',
+      'Space planning, ceiling lighting and material selection',
+      'Custom joinery and furniture detailing',
+      'Execution coordination with vetted contractors',
     ],
   },
   {
-    title: 'Liaisoning & approvals',
-    summary: 'The drawings and statutory clearances that get projects built.',
+    title: 'Liaisoning & Specialist Consultants',
+    summary: 'Connecting you with the right approvals and engineering teams faster.',
     points: [
-      'PMC & PCMC submission and sanctioning drawings',
-      'Development authority certifications and compounding',
-      'Fire NOC, environmental clearance & structural vetting',
-      'RERA carpet-area schedules and completion certificates',
+      'Corporation sanctioning (PMC / PCMC) and submission drawings',
+      'Environmental consulting & development authority certifications',
+      'Fire NOC consulting & safety compliance',
+      'MEP & RCC structural coordination under one studio',
     ],
   },
 ]
 
 export const process = [
   { title: 'Brief & site visit', text: 'We walk your plot in Pune, check FSI/DCR rules and align on budget and timeline.' },
-  { title: '3D massing & plan', text: 'Inspect exterior proportions, sun-path and 3D cutaway floor plans before locking walls.' },
+  { title: 'Concept & 3D', text: 'Layouts, elevation concepts and 3D walkthroughs before locking structural grids.' },
   { title: 'Approvals', text: 'PMC/PCMC submission drawings, fire NOC and authority liaisoning handled in-house.' },
   { title: 'Working drawings', text: 'Detailed RCC, electrical, plumbing and interior joinery sets for contractors.' },
-  { title: 'Construction', text: 'Milestone site visits from excavation to final handover.' },
+  { title: 'Construction', text: 'Regular site supervision from excavation to final handover.' },
 ]
 
 export type ProjectKind = 'residential' | 'commercial' | 'interior' | 'landscape' | 'bungalow'
@@ -330,11 +371,11 @@ export const projectKinds: {
 ]
 
 export const values = [
-  { title: 'Integrity', text: 'We design with your input so every square foot serves real life.' },
-  { title: 'Transparency', text: 'Clear drawings, honest BOQs and open communication from day one.' },
-  { title: 'Accountability', text: 'Single-point ownership across architecture, structure and sanctions.' },
-  { title: 'Quality', text: 'Uncompromising detailing on paper, in 3D and on the construction site.' },
-  { title: 'Innovation', text: 'Real-time 3D building twins and floor-plan simulations before build.' },
+  { title: 'Integrity', text: 'We innovate together — your input helps us craft architecture that best serves real needs.' },
+  { title: 'Transparency', text: 'Acting in a transparent, trustworthy manner that earns the respect of clients and the public.' },
+  { title: 'Accountability', text: 'Strong ethics across every member and decision in the studio.' },
+  { title: 'Quality', text: 'The highest standards of craftsmanship on paper, in 3D and on site.' },
+  { title: 'Innovation', text: 'Taking ownership and applying modern architectural methods to build lasting trust.' },
 ]
 
 export const clients = [
@@ -348,18 +389,86 @@ export const clients = [
   { name: 'PrathamYash', logo: '/clients/prathamyash.jpg' },
 ]
 
+export const eventsGallery = [
+  { src: '/events/event-1.jpg', title: 'Studio Celebration & Team Milestone' },
+  { src: '/events/event-3.jpg', title: 'Annual Architects Gathering · Pimpri' },
+  { src: '/events/event-5.jpg', title: 'Design & Liaisoning Workshop' },
+  { src: '/events/event-12.jpg', title: 'DSA Studio Culture & Awards' },
+  { src: '/events/event-13.jpg', title: 'Team Collaboration Day' },
+  { src: '/events/event-14.jpg', title: 'Project Launch & Client Meet' },
+  { src: '/events/event-15.jpg', title: 'Studio Outing & Team Bonding' },
+  { src: '/events/event-16.jpg', title: 'Celebration at MSR Capital Studio' },
+]
+
+export const blogPosts = [
+  {
+    id: '34',
+    title: 'Vernacular Architecture in Modern India',
+    category: 'Sustainability',
+    src: '/blog/vernacular-architecture.jpg',
+    excerpt:
+      'From mud homes in Rajasthan to timber dwellings in Kerala, borrowing passive climate strategies and local materials creates resilient, energy-efficient buildings.',
+    href: 'https://dsarch.in/blog-details/34',
+  },
+  {
+    id: '32',
+    title: 'Dreamspace Architects: The Bright Side',
+    category: 'Daylighting',
+    src: '/blog/bright-side.jpg',
+    excerpt:
+      'How architectural skylights and well-oriented openings bring natural warmth indoors, lower daytime lighting loads and transform residential interiors.',
+    href: 'https://dsarch.in/blog-details/32',
+  },
+  {
+    id: '31',
+    title: "Maximising Space in Pune's Urban Homes",
+    category: 'Space Planning',
+    src: '/blog/urban-homes.jpg',
+    excerpt:
+      'As Pune grows denser, smart circulation, zero-waste corridors and dual-aspect layouts unlock comfortable, functional living within every square foot.',
+    href: 'https://dsarch.in/blog-details/31',
+  },
+  {
+    id: '33',
+    title: 'Designing for a Sustainable Future',
+    category: 'Green Design',
+    src: '/blog/sustainable-future.jpg',
+    excerpt:
+      'Shaping the built environment responsibly through passive solar shading, cross-ventilation and lower-footprint material specification.',
+    href: 'https://dsarch.in/blog-details/33',
+  },
+  {
+    id: '28',
+    title: 'Architectural Acoustics',
+    category: 'Building Science',
+    src: '/blog/acoustics.jpg',
+    excerpt:
+      'Why room proportions, surface absorption and sound isolation matter just as much as visual form in offices, auditoriums and urban homes.',
+    href: 'https://dsarch.in/blog-details/28',
+  },
+  {
+    id: '27',
+    title: 'Urban Planning In India',
+    category: 'Urbanism',
+    src: '/blog/urban-planning.jpg',
+    excerpt:
+      'Lessons from India’s rapid urbanisation and why disciplined infrastructure, setbacks and mixed-use zoning shape healthier neighbourhoods.',
+    href: 'https://dsarch.in/blog-details/27',
+  },
+]
+
 export const testimonials = [
   {
     quote:
-      'From the first 3D building walkthrough to final PCMC sanctioning, Dream Space Architects gave our entire team total clarity. Their attention to floor-plan efficiency is unmatched.',
+      'From concept massing to final PCMC sanctioning, Dream Space Architects gave our entire development team total clarity. Their attention to floor-plan efficiency is unmatched.',
     author: 'Shevi Group',
     role: 'Residential & Mixed-Use Developer, Pune',
   },
   {
     quote:
-      'Seeing our home as a live 3D cutaway before breaking ground saved months of site changes. Every corner of light and ventilation matched what they showed us.',
-    author: 'Mr. Vasant Kate',
-    role: 'Private Bungalow Client, Pimpri-Chinchwad',
+      'Working with Ar. Mahendra Thakur and his studio saved months across approvals and execution. Every elevation and interior detail matched what they designed on paper.',
+    author: 'Swastik Builders & Developers',
+    role: 'Pimpri-Chinchwad, Pune',
   },
 ]
 

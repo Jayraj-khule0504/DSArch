@@ -1,9 +1,11 @@
 import Header, { BrandLogo } from './components/Header'
 import Hero from './components/Hero'
 import About from './components/About'
+import Team from './components/Team'
 import Services from './components/Services'
 import Projects from './components/Projects'
 import Process from './components/Process'
+import EventsAndBlog from './components/EventsAndBlog'
 import Career from './components/Career'
 import Contact from './components/Contact'
 import { firm, nav } from './data/content'
@@ -16,9 +18,11 @@ export default function App() {
       <main id="main">
         <Hero />
         <About />
+        <Team />
         <Services />
         <Projects />
         <Process />
+        <EventsAndBlog />
         <Career />
         <Contact />
       </main>

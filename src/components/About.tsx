@@ -50,16 +50,19 @@ export default function About() {
     <section className="band about" id="about">
       <div className="wrap about__split">
         <div className="about__copy">
-          <span className="eyebrow">— Who we are</span>
+          <span className="eyebrow">— About DSA · Since 2008</span>
           <h2>{about.title}</h2>
           {about.body.map((p) => (
             <p key={p}>{p}</p>
           ))}
           <p className="about__mission">
+            <strong>Our vision.</strong> {about.vision}
+          </p>
+          <p className="about__mission">
             <strong>Our mission.</strong> {about.mission}
           </p>
           <div className="about__cta">
-            <a href="#process" className="btn btn--dark">More About Us →</a>
+            <a href="#team" className="btn btn--dark">Meet Our Team →</a>
             <a href="#projects" className="btn btn--line">View Projects</a>
           </div>
         </div>
@@ -77,12 +80,37 @@ export default function About() {
         </div>
       </div>
 
+      {/* Our Journey timeline from dsarch.in/my-aboutus */}
+      <div className="wrap journey">
+        <div className="journey__head">
+          <div>
+            <span className="eyebrow">— Our Journey (Since 2008)</span>
+            <h3>From a 100 sq.ft desk to a 2,750 sq.ft studio in Pimpri</h3>
+          </div>
+          <img
+            src="/about/our-journey.png"
+            alt="Dream Space Architects studio journey illustration"
+            className="journey__img"
+            loading="lazy"
+          />
+        </div>
+        <ol className="journey__grid">
+          {about.journey.map((j, idx) => (
+            <li key={j.step}>
+              <span className="journey__num">0{idx + 1}</span>
+              <strong>{j.step}</strong>
+              <p>{j.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
       <div className="wrap about__quote-band">
         <figure className="quote quote--split">
           <div className="quote__body">
             <blockquote>“{about.quote}”</blockquote>
             <p>{about.quoteNote}</p>
-            <figcaption>— {firm.founder} · Founder, {firm.name}</figcaption>
+            <figcaption>— {firm.founder} · Principal Architect, {firm.name}</figcaption>
           </div>
           <img
             src="/founder-mahendra.jpg"
@@ -94,7 +122,7 @@ export default function About() {
       </div>
 
       <div className="wrap values">
-        <h3>What we hold to</h3>
+        <h3>Core Values</h3>
         <ul>
           {values.map((v) => (
             <li key={v.title}>
