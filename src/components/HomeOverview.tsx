@@ -187,13 +187,15 @@ export default function HomeOverview({
           <div className="clients">
             <span className="eyebrow">— Clientele</span>
             <h3>Trusted by Pune developers &amp; builders</h3>
-            <ul className="client-logos">
-              {clients.map((c) => (
-                <li key={c.name} className="client-logo">
-                  <img src={c.logo} alt={c.name} loading="lazy" />
-                </li>
-              ))}
-            </ul>
+            <div className="client-marquee" aria-label="Client developer logos">
+              <ul className="client-track">
+                {[...clients, ...clients].map((c, idx) => (
+                  <li key={`${c.name}-${idx}`} className="client-logo" aria-hidden={idx >= clients.length}>
+                    <img src={c.logo} alt={idx < clients.length ? c.name : ''} loading="lazy" />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
