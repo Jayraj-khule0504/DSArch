@@ -1,6 +1,10 @@
+import { useState } from 'react'
 import { principalArchitect, teamMembers } from '../data/content'
 
 export default function Team() {
+  const [showAll, setShowAll] = useState(false)
+  const visible = showAll ? teamMembers : teamMembers.slice(0, 12)
+
   return (
     <section className="band team" id="team">
       <div className="wrap">
@@ -21,6 +25,7 @@ export default function Team() {
               src={principalArchitect.photo}
               alt={`${principalArchitect.name} — ${principalArchitect.role}`}
               loading="lazy"
+              decoding="async"
             />
           </div>
           <div className="principal-card__body">
@@ -31,10 +36,10 @@ export default function Team() {
         </article>
 
         <div className="team-grid">
-          {teamMembers.map((m) => (
+          {visible.map((m) => (
             <article key={m.name} className="member-card">
               <div className="member-card__media">
-                <img src={m.photo} alt={`${m.name} — ${m.role}`} loading="lazy" />
+                <img src={m.photo} alt={`${m.name} — ${m.role}`} loading="lazy" decoding="async" />
               </div>
               <div className="member-card__info">
                 <strong>{m.name}</strong>
@@ -43,6 +48,20 @@ export default function Team() {
             </article>
           ))}
         </div>
+
+        {teamMembers.length > 12 && (
+          <div className="portfolio-more">
+            <button
+              type="button"
+              className="btn btn--line"
+              onClick={() => setShowAll((s) => !s)}
+            >
+              {showAll
+                ? 'Show Fewer Team Members'
+                : `View Full Studio Team (${teamMembers.length + 1}) ↓`}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )

@@ -201,7 +201,7 @@ export default function HomeOverview({
                 className="btn btn--dark"
                 onClick={() => onNavigate('projects')}
               >
-                View All 24 Projects →
+                View Full Portfolio →
               </button>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function HomeOverview({
                       onNavigate('projects')
                     }}
                   >
-                    Browse All 24 Projects →
+                    Browse Full Portfolio →
                   </button>
                   <button
                     type="button"

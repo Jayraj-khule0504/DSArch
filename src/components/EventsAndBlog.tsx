@@ -4,7 +4,10 @@ import { blogPosts, eventsGallery, type BlogPost } from '../data/content'
 
 export default function EventsAndBlog() {
   const [lightbox, setLightbox] = useState<string | null>(null)
+  const [showAllEvents, setShowAllEvents] = useState(false)
   const [activePost, setActivePost] = useState<BlogPost | null>(null)
+
+  const visibleEvents = showAllEvents ? eventsGallery : eventsGallery.slice(0, 8)
 
   return (
     <>
@@ -22,7 +25,7 @@ export default function EventsAndBlog() {
           </div>
 
           <div className="events-grid">
-            {eventsGallery.map((ev) => (
+            {visibleEvents.map((ev) => (
               <button
                 key={ev.src}
                 type="button"
@@ -34,6 +37,19 @@ export default function EventsAndBlog() {
               </button>
             ))}
           </div>
+          {eventsGallery.length > 8 && (
+            <div className="portfolio-more">
+              <button
+                type="button"
+                className="btn btn--line"
+                onClick={() => setShowAllEvents((s) => !s)}
+              >
+                {showAllEvents
+                  ? 'Show Fewer Event Photos'
+                  : `View All ${eventsGallery.length} Event Photos ↓`}
+              </button>
+            </div>
+          )}
         </div>
 
         {lightbox && (
