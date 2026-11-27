@@ -464,10 +464,25 @@ a { color: inherit; }
 .chips button:hover { border-color: var(--cobalt); }
 .chips button[aria-selected='true'] { background: #161922; border-color: #161922; color: #fff; }
 
-.portfolio-panel {
-  display: grid; grid-template-columns: 1.5fr 0.9fr; gap: 20px; align-items: stretch;
+.portfolio-banner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px;
+  border-radius: 20px; padding: clamp(22px, 3vw, 32px);
+  background: var(--cobalt-deep); color: #fff; margin-bottom: 22px;
 }
-.portfolio-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+.portfolio-banner h3 { margin: 0 0 6px; font-size: clamp(22px, 2.5vw, 30px); }
+.portfolio-banner p { margin: 0; color: rgba(255,255,255,.84); max-width: 62ch; font-size: 14.5px; }
+.portfolio-banner__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.portfolio-banner .link { color: var(--sun); }
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.portfolio-more { display: flex; justify-content: center; margin-top: 26px; }
+@media (max-width: 960px) { .portfolio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 620px) { .portfolio-grid { grid-template-columns: 1fr; } }
+
 .project-card {
   border-radius: 20px; overflow: hidden; border: 1px solid var(--rule); background: var(--bg);
   display: flex; flex-direction: column;
@@ -485,18 +500,8 @@ a { color: inherit; }
 .project-card__body h3 { margin: 4px 0 6px; font-size: 20px; }
 .project-card__body p { margin: 0; font-size: 14px; color: var(--muted); }
 
-.portfolio-aside {
-  border-radius: 22px; padding: clamp(24px, 3.5vw, 38px);
-  background: var(--cobalt-deep); color: #fff;
-  display: flex; flex-direction: column; justify-content: center;
-}
-.portfolio-aside h3 { font-size: clamp(24px, 2.8vw, 32px); margin-bottom: 10px; }
-.portfolio-aside p { color: rgba(255,255,255,.84); }
-.portfolio-aside__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin-top: 12px; }
-.portfolio-aside .link { color: var(--sun); }
-
 .showcase-strip {
-  margin-top: 24px;
+  margin-top: 28px;
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;
 }
 .showcase-strip figure {
@@ -509,7 +514,6 @@ a { color: inherit; }
   color: #fff; font-size: 12px; font-weight: 600;
 }
 @media (max-width: 900px) {
-  .portfolio-panel { grid-template-columns: 1fr; }
   .showcase-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
