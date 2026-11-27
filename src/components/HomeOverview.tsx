@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { animate, useInView } from 'framer-motion'
+import { AnimatePresence, animate, motion, useInView } from 'framer-motion'
 import { about, clients, firm, process, services, stats } from '../data/content'
 import type { PageId } from './Header'
 
@@ -28,12 +28,54 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
 }
 
 const FEATURED_WORKS = [
-  { title: 'Vision Aristo', tag: 'Residential', src: '/projects/dsa/vision-aristo.jpg' },
-  { title: 'Swastik Twin Tower', tag: 'Residential · PCMC', src: '/projects/dsa/swastik-twin-tower.jpg' },
-  { title: 'Vishnu Capitals', tag: 'Commercial', src: '/projects/dsarch-commercial.jpg' },
-  { title: 'Omkar Doke · MSR Capital', tag: 'Interior', src: '/projects/dsa/msr-capital-interior.jpg' },
-  { title: 'DSA Skylife Courtyard', tag: 'Landscape', src: '/projects/dsa/landscape-1.jpg' },
-  { title: 'Vilas Patil Residence', tag: 'Bungalow', src: '/projects/dsa/vilas-patil-bungalow.jpg' },
+  {
+    title: 'Vision Aristo',
+    tag: 'Residential',
+    location: 'Pune · Vision Creative Group',
+    summary: 'Multi-wing contemporary residential towers with articulated balconies and podium amenities.',
+    src: '/projects/dsa/vision-aristo.jpg',
+    wide: true,
+  },
+  {
+    title: 'Swastik Twin Tower',
+    tag: 'Residential · PCMC',
+    location: 'Pimpri-Chinchwad · Swastik Builders',
+    summary: 'Symmetrical twin high-rises anchored by a landscaped central podium and arrival court.',
+    src: '/projects/dsa/swastik-twin-tower.jpg',
+    wide: false,
+  },
+  {
+    title: 'Vishnu Capitals',
+    tag: 'Commercial',
+    location: 'Pune Metropolitan Region',
+    summary: 'Glazed double-level retail & office frontage with bold cantilevered upper corporate volume.',
+    src: '/projects/dsarch-commercial.jpg',
+    wide: false,
+  },
+  {
+    title: 'Omkar Doke · MSR Capital',
+    tag: 'Interior',
+    location: 'Pune · Commercial Interior',
+    summary: 'Warm wood-accented corporate office reception, workstations and recessed cove lighting.',
+    src: '/projects/dsa/msr-capital-interior.jpg',
+    wide: false,
+  },
+  {
+    title: 'DSA Skylife Courtyard',
+    tag: 'Landscape',
+    location: 'Pimpri-Chinchwad, Pune',
+    summary: 'Sculpted swimming pool deck, manicured lawn courts and shaded arrival walkway.',
+    src: '/projects/dsa/landscape-1.jpg',
+    wide: false,
+  },
+  {
+    title: 'Vilas Patil Residence',
+    tag: 'Bungalow',
+    location: 'Pune · Private Villa',
+    summary: 'Cantilevered concrete terraces, warm wooden soffits and private garden frontage.',
+    src: '/projects/dsa/vilas-patil-bungalow.jpg',
+    wide: true,
+  },
 ]
 
 export default function HomeOverview({
@@ -41,12 +83,20 @@ export default function HomeOverview({
 }: {
   onNavigate: (target: PageId | 'contact') => void
 }) {
+  const [spotlight, setSpotlight] = useState<(typeof FEATURED_WORKS)[number] | null>(null)
+
   return (
     <>
       {/* 1. Founder Quote & Studio Overview right under Front Page */}
       <section className="band about" aria-label="Founder quote and studio overview">
-        <div className="wrap" style={{ marginBottom: 'clamp(40px, 5vw, 64px)' }}>
-          <figure className="quote quote--split">
+        <div className="wrap" style={{ marginBottom: 'clamp(44px, 5vw, 68px)' }}>
+          <motion.figure
+            className="quote quote--split"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          >
             <div className="quote__body">
               <blockquote>“{about.quote}”</blockquote>
               <p>{about.quoteNote}</p>
@@ -58,7 +108,7 @@ export default function HomeOverview({
               className="quote__photo"
               loading="lazy"
             />
-          </figure>
+          </motion.figure>
         </div>
 
         <div className="wrap about__split">
@@ -115,7 +165,14 @@ export default function HomeOverview({
           </div>
           <div className="svc-cards">
             {services.map((s, i) => (
-              <article key={s.title} className="svc-card">
+              <motion.article
+                key={s.title}
+                className="svc-card"
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.35, delay: i * 0.08 }}
+              >
                 <span className="svc-card__num">0{i + 1}</span>
                 <h3>{s.title}</h3>
                 <p>{s.summary}</p>
@@ -124,14 +181,14 @@ export default function HomeOverview({
                     <li key={pt}>{pt}</li>
                   ))}
                 </ul>
-              </article>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3. Selected Projects Preview */}
-      <section className="band projects" aria-label="Selected projects">
+      {/* 3. Eye-Catching Architectural Bento Showcase */}
+      <section className="band projects-showcase" aria-label="Selected projects">
         <div className="wrap">
           <div className="section-head">
             <div>
@@ -149,27 +206,44 @@ export default function HomeOverview({
             </div>
           </div>
 
-          <div className="portfolio-grid">
-            {FEATURED_WORKS.map((w) => (
-              <article
+          <div className="bento-grid">
+            {FEATURED_WORKS.map((w, i) => (
+              <motion.article
                 key={w.title}
-                className="project-card project-card--click"
-                onClick={() => onNavigate('projects')}
+                className={`bento-card${w.wide ? ' bento-card--wide' : ''}`}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.15 }}
+                transition={{ duration: 0.38, delay: i * 0.05 }}
+                onClick={() => setSpotlight(w)}
+                tabIndex={0}
+                role="button"
+                aria-label={`Inspect ${w.title}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault()
+                    setSpotlight(w)
+                  }
+                }}
               >
-                <div className="project-card__media">
-                  <img src={w.src} alt={w.title} loading="lazy" />
-                  <span className="project-card__tag">{w.tag}</span>
+                <img src={w.src} alt={w.title} loading="lazy" />
+                <div className="bento-card__scrim" aria-hidden />
+                <div className="bento-card__top">
+                  <span className="bento-card__tag">{w.tag}</span>
+                  <span className="bento-card__arrow" aria-hidden>↗</span>
                 </div>
-                <div className="project-card__body">
+                <div className="bento-card__bottom">
+                  <span className="bento-card__loc">{w.location}</span>
                   <h3>{w.title}</h3>
+                  <p>{w.summary}</p>
                 </div>
-              </article>
+              </motion.article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4. Compact 5-Step Process & Clientele */}
+      {/* 4. Compact 5-Step Process & Moving Clientele Marquee */}
       <section className="band process" aria-label="Process and clientele">
         <div className="wrap">
           <span className="eyebrow">— How We Work</span>
@@ -199,6 +273,70 @@ export default function HomeOverview({
           </div>
         </div>
       </section>
+
+      {/* Interactive Project Spotlight Modal */}
+      <AnimatePresence>
+        {spotlight && (
+          <motion.div
+            className="spotlight-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSpotlight(null)}
+          >
+            <motion.div
+              className="spotlight-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="spot-title"
+              initial={{ opacity: 0, y: 18, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 12, scale: 0.98 }}
+              transition={{ duration: 0.22 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="spotlight-modal__close"
+                onClick={() => setSpotlight(null)}
+                aria-label="Close preview"
+              >
+                ✕
+              </button>
+              <div className="spotlight-modal__media">
+                <img src={spotlight.src} alt={spotlight.title} />
+              </div>
+              <div className="spotlight-modal__body">
+                <span className="eyebrow">{spotlight.tag} · {spotlight.location}</span>
+                <h3 id="spot-title">{spotlight.title}</h3>
+                <p>{spotlight.summary}</p>
+                <div className="spotlight-modal__actions">
+                  <button
+                    type="button"
+                    className="btn btn--dark"
+                    onClick={() => {
+                      setSpotlight(null)
+                      onNavigate('projects')
+                    }}
+                  >
+                    Browse All 24 Projects →
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn--sun"
+                    onClick={() => {
+                      setSpotlight(null)
+                      onNavigate('contact')
+                    }}
+                  >
+                    Enquire About Similar Project
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

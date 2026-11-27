@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { projectKinds, type ProjectKind } from '../data/content'
+import { projectKinds, type ProjectItem, type ProjectKind } from '../data/content'
 
 export default function Projects() {
   const [kind, setKind] = useState<ProjectKind>('residential')
   const [showAll, setShowAll] = useState(false)
+  const [activeProject, setActiveProject] = useState<ProjectItem | null>(null)
 
   const info = projectKinds.find((k) => k.key === kind)!
   const visibleProjects =
@@ -47,9 +48,6 @@ export default function Projects() {
             <a href="#contact" className="btn btn--sun">
               Discuss a {info.label.toLowerCase()} project
             </a>
-            <a href="#process" className="link">
-              See our 5-step process →
-            </a>
           </div>
         </div>
 
@@ -66,10 +64,24 @@ export default function Projects() {
           >
             <div className="portfolio-grid">
               {visibleProjects.map((p) => (
-                <article key={p.title} className="project-card">
+                <article
+                  key={p.title}
+                  className="project-card project-card--click"
+                  onClick={() => setActiveProject(p)}
+                  tabIndex={0}
+                  role="button"
+                  aria-label={`Inspect ${p.title}`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      setActiveProject(p)
+                    }
+                  }}
+                >
                   <div className="project-card__media">
                     <img src={p.src} alt={`${p.title} — ${p.location}`} loading="lazy" />
                     <span className="project-card__tag">{p.scale}</span>
+                    <span className="project-card__zoom" aria-hidden>↗</span>
                   </div>
                   <div className="project-card__body">
                     <span className="project-card__loc">{p.location}</span>
@@ -95,26 +107,57 @@ export default function Projects() {
             )}
           </motion.div>
         </AnimatePresence>
-
-        <div className="showcase-strip" aria-label="Featured architectural renders">
-          <figure>
-            <img src="/projects/dsa/vision-aristo.jpg" alt="Vision Aristo residential elevation" loading="lazy" />
-            <figcaption>Vision Aristo · Residential</figcaption>
-          </figure>
-          <figure>
-            <img src="/projects/dsa/swastik-twin-tower.jpg" alt="Swastik Twin Tower elevation" loading="lazy" />
-            <figcaption>Swastik Twin Tower · PCMC</figcaption>
-          </figure>
-          <figure>
-            <img src="/projects/dsarch-commercial.jpg" alt="Vishnu Capitals commercial building" loading="lazy" />
-            <figcaption>Vishnu Capitals · Commercial</figcaption>
-          </figure>
-          <figure>
-            <img src="/projects/dsa/vilas-patil-bungalow.jpg" alt="Vilas Patil private bungalow" loading="lazy" />
-            <figcaption>Vilas Patil · Bungalow</figcaption>
-          </figure>
-        </div>
       </div>
+
+      <AnimatePresence>
+        {activeProject && (
+          <motion.div
+            className="spotlight-backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setActiveProject(null)}
+          >
+            <motion.div
+              className="spotlight-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="proj-modal-title"
+              initial={{ opacity: 0, y: 18, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 12, scale: 0.98 }}
+              transition={{ duration: 0.22 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="spotlight-modal__close"
+                onClick={() => setActiveProject(null)}
+                aria-label="Close project preview"
+              >
+                ✕
+              </button>
+              <div className="spotlight-modal__media">
+                <img src={activeProject.src} alt={activeProject.title} />
+              </div>
+              <div className="spotlight-modal__body">
+                <span className="eyebrow">{activeProject.scale} · {activeProject.location}</span>
+                <h3 id="proj-modal-title">{activeProject.title}</h3>
+                <p>{activeProject.summary}</p>
+                <div className="spotlight-modal__actions">
+                  <a
+                    href="#contact"
+                    className="btn btn--sun"
+                    onClick={() => setActiveProject(null)}
+                  >
+                    Enquire About Similar Project →
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   )
 }
